@@ -367,6 +367,11 @@ $disable-color: rgb(57, 104, 20);
         color: $base-color;
       }
     }
+
+    &:active {
+      background-color: $base-color;
+      color: $background-color;
+    }
   }
 
   &__page_container {
