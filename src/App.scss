@@ -1,3 +1,5 @@
+@import "./utils/mixins";
+
 $base-color: rgb(104, 221, 20);
 $background-color: rgb(7, 26, 3);
 $disable-color: rgb(57, 104, 20);
@@ -18,8 +20,8 @@ $disable-color: rgb(57, 104, 20);
   display: flex;
   justify-content: center;
   background-color: $background-color;
-  height: 100vh;
   width: 100vw;
+  min-height: 100vh;
 }
 
 .main {
@@ -31,6 +33,12 @@ $disable-color: rgb(57, 104, 20);
   flex-direction: column;
   border-left: 3px solid $base-color;
   border-right: 3px solid $base-color;
+
+  @include OnPhone {
+    font-size: 35px;
+    width: 300px;
+    border: none;
+  }
 
   &--withoutBorders {
     border: none;
@@ -51,6 +59,14 @@ $disable-color: rgb(57, 104, 20);
     display: flex;
     gap: 60px;
     margin-bottom: 30px;
+
+    @include OnPhone {
+      box-sizing: border-box;
+      flex-direction: column;
+      gap: 25px;
+      width: 300px;
+      padding: 23px;
+    }
 
     &--profile {
       flex-direction: column;
@@ -80,6 +96,12 @@ $disable-color: rgb(57, 104, 20);
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @include OnPhone {
+        flex-grow: 1;
+        width: unset;
+        height: 50px;
+      }
     }
 
     &--disabled {
@@ -121,6 +143,11 @@ $disable-color: rgb(57, 104, 20);
     min-width: 500px;
     height: fit-content;
     border: 3px solid $base-color;
+
+    @include OnPhone {
+      width: 250px;
+      min-width: 100px;
+    }
   }
 
   &__title {
@@ -129,6 +156,10 @@ $disable-color: rgb(57, 104, 20);
     background-color: $background-color;
     font-size: 30px;
     width: max-content;
+
+    @include OnPhone {
+      font-size: 20px;
+    }
 
     &--long {
       transform: translate(2%, -52%);
@@ -143,6 +174,11 @@ $disable-color: rgb(57, 104, 20);
     padding: 0 10px 10px;
     font-size: 20px;
     width: 512px;
+
+    @include OnPhone {
+      font-size: 16px;
+      width: unset;
+    }
 
     &--remember {
       padding: 0 0 4px;
@@ -161,6 +197,11 @@ $disable-color: rgb(57, 104, 20);
     background-color: $background-color;
     border: 3px solid $base-color;
     outline: none;
+
+    @include OnPhone {
+      font-size: 15px;
+      padding: 0 2px;
+    }
 
     &--verify {
       margin-bottom: 10px;
@@ -183,6 +224,10 @@ $disable-color: rgb(57, 104, 20);
     &::placeholder {
       font-size: 20px;
       color: $base-color;
+
+      @include OnPhone {
+        font-size: 15px;
+      }
     }
 
     &--disabled::placeholder {
@@ -247,6 +292,12 @@ $disable-color: rgb(57, 104, 20);
       justify-content: center;
       align-items: center;
       text-align: center;
+
+      @include OnPhone {
+        flex-grow: 1;
+        width: unset;
+        height: 50px;
+      }
     }
 
     &--disabled {
