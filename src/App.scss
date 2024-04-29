@@ -67,10 +67,16 @@ $disable-color: rgb(57, 104, 20);
   }
 
   &__title {
+    display: flex;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
     white-space: pre-wrap;
+
+    @include OnPhone {
+      max-width: 252px;
+      margin-bottom: 0;
+    }
   }
 
   &__container {
@@ -83,8 +89,8 @@ $disable-color: rgb(57, 104, 20);
       flex-direction: column;
       gap: 25px;
       width: 300px;
-      padding: 23px;
       margin-bottom: 15px;
+      margin-top: 15px;
     }
 
     &--profile {
@@ -106,6 +112,10 @@ $disable-color: rgb(57, 104, 20);
     font-size: 20px;
     cursor: pointer;
     text-decoration: none;
+
+    @include OnPhone {
+      margin: 0 23px;
+    }
 
     &--profile {
       width: 200px;
@@ -174,21 +184,30 @@ $disable-color: rgb(57, 104, 20);
 
   &__title {
     padding: 0 6px;
-    transform: translate(5%, -52%);
+    transform: translate(7%, -52%);
     background-color: $background-color;
     font-size: 30px;
     width: max-content;
 
     @include OnPhone {
+      transform: translate(7%, -58%);
       font-size: 20px;
     }
 
     &--long {
       transform: translate(2%, -52%);
+
+      @include OnPhone {
+        transform: translate(2%, -43%);
+      }
     }
 
     &--with-button {
       transform: translate(0, -52%);
+
+      @include OnPhone {
+        transform: translate(0, -43%);
+      }
     }
   }
 
@@ -302,15 +321,6 @@ $disable-color: rgb(57, 104, 20);
       font-size: 26px;
     }
 
-    &--back {
-      transform: translate(-32%, -32%);
-      border: 3px solid $base-color;
-      box-sizing: content-box;
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
-    }
-
     &--centered {
       justify-content: center;
     }
@@ -331,6 +341,21 @@ $disable-color: rgb(57, 104, 20);
       background-color: $background-color;
       color: $disable-color;
       pointer-events: none;
+    }
+
+    &--back {
+      transform: translate(-32%, -32%);
+      border: 3px solid $base-color;
+      box-sizing: content-box;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+
+      @include OnPhone {
+        transform: translate(-25%, -25%);
+        width: 30px;
+        height: 30px;
+      }
     }
 
     &:hover {
