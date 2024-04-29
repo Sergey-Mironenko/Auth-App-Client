@@ -37,7 +37,6 @@ $disable-color: rgb(57, 104, 20);
   @include OnPhone {
     font-size: 35px;
     width: 300px;
-    border: none;
   }
 
   &--withoutBorders {
