@@ -28,16 +28,16 @@ $disable-color: rgb(57, 104, 20);
     position: fixed;
     content: "";
     width: 100%;
-    height: 30px;
-    background-color: aquamarine;
+    height: 25px;
+    background-color: $background-color;
   }
 
   &::after {
     position: fixed;
     content: "";
     width: 100%;
-    height: 30px;
-    background-color: aquamarine;
+    height: 25px;
+    background-color: $background-color;
     bottom: 0;
   }
 }
@@ -54,7 +54,8 @@ $disable-color: rgb(57, 104, 20);
 
   @include OnPhone {
     font-size: 35px;
-    width: 300px;
+    width: 280px;
+    padding: 0 15px;
   }
 
   &--withoutBorders {
@@ -83,6 +84,7 @@ $disable-color: rgb(57, 104, 20);
       gap: 25px;
       width: 300px;
       padding: 23px;
+      margin-bottom: 15px;
     }
 
     &--profile {
@@ -143,6 +145,8 @@ $disable-color: rgb(57, 104, 20);
 }
 
 .section {
+  margin-bottom: 30px;
+
   &--profile {
     margin-top: 8px;
   }
@@ -164,6 +168,7 @@ $disable-color: rgb(57, 104, 20);
     @include OnPhone {
       width: 250px;
       min-width: 100px;
+      margin-bottom: 5px;
     }
   }
 
@@ -257,6 +262,12 @@ $disable-color: rgb(57, 104, 20);
     justify-content: space-between;
     align-items: center;
 
+    @include OnPhone {
+      flex-direction: column-reverse;
+      min-height: 94px;
+      max-width: 250px;
+    }
+
     &--reset {
       width: 100%;
       justify-content: center;
@@ -311,8 +322,7 @@ $disable-color: rgb(57, 104, 20);
       text-align: center;
 
       @include OnPhone {
-        flex-grow: 1;
-        width: unset;
+        width: 100%;
         height: 50px;
       }
     }
@@ -362,6 +372,13 @@ $disable-color: rgb(57, 104, 20);
     text-decoration: none;
     margin: 5px 10px 10px;
 
+    @include OnPhone {
+      width: 24px;
+      height: 24px;
+      font-size: 15px;
+      border: 4px solid $base-color;
+    }
+
     &--enabled {
       display: flex;
       justify-content: center;
@@ -383,6 +400,14 @@ $disable-color: rgb(57, 104, 20);
     max-width: 300px;
     color: $base-color;
     font-size: 20px;
+
+    @include OnPhone {
+      font-size: 15px;
+      margin-bottom: 5px;
+      height: 38.4px;
+      justify-content: center;
+      align-items: center;
+    }
 
     &--enabled {
       display: flex;

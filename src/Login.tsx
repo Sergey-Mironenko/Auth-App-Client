@@ -73,7 +73,7 @@ export const Login = () => {
   
   const onLogin = () => {
     if (!email) {
-      handleMessage('Please enter email');
+      handleMessage('Token is too old. Please get new one');
     } else if (!password) {
       handleMessage('Please enter password');
     } else {
