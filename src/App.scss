@@ -361,6 +361,11 @@ $disable-color: rgb(57, 104, 20);
     &:hover {
       background-color: $base-color;
       color: $background-color;
+
+      @include OnPhone {
+        background-color: $background-color;
+        color: $base-color;
+      }
     }
   }
 
