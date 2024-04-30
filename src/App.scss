@@ -58,6 +58,12 @@ $disable-color: rgb(57, 104, 20);
     padding: 0 15px;
   }
 
+  @include OnLaptop {
+    font-size: 42px;
+    width: 450px;
+    padding: 0 30px;
+  }
+
   &--withoutBorders {
     border: none;
   }
@@ -76,6 +82,10 @@ $disable-color: rgb(57, 104, 20);
     @include OnPhone {
       max-width: 254px;
       margin-bottom: 0;
+    }
+
+    @include OnLaptop {
+      margin-bottom: 10px;
     }
   }
 
@@ -180,6 +190,12 @@ $disable-color: rgb(57, 104, 20);
       min-width: 100px;
       margin-bottom: 5px;
     }
+
+    @include OnLaptop {
+      font-size: 42px;
+      min-width: 100px;
+      width: 450px;
+    }
   }
 
   &__title {
@@ -190,15 +206,25 @@ $disable-color: rgb(57, 104, 20);
     width: max-content;
 
     @include OnPhone {
-      transform: translate(7%, -58%);
+      transform: translate(7%, -56%);
       font-size: 20px;
     }
+
+    @include OnLaptop {
+      transform: translate(7%, -52%);
+      font-size: 24px;
+    }
+
 
     &--long {
       transform: translate(2%, -52%);
 
       @include OnPhone {
-        transform: translate(2%, -58%);
+        transform: translate(2%, -56%);
+      }
+
+      @include OnLaptop {
+        transform: translate(2%, -52%);
       }
     }
 
@@ -208,17 +234,27 @@ $disable-color: rgb(57, 104, 20);
       @include OnPhone {
         transform: translate(0, -43%);
       }
+
+      @include OnLaptop {
+        transform: translate(2%, -40%);
+      }
     }
   }
 
   &__text {
+    box-sizing: border-box;
     padding: 0 10px 10px;
     font-size: 20px;
     width: 512px;
 
     @include OnPhone {
       font-size: 16px;
-      width: unset;
+      width: 250px;
+    }
+
+    @include OnLaptop {
+      font-size: 18px;
+      width: 450px;
     }
 
     &--remember {
@@ -240,8 +276,13 @@ $disable-color: rgb(57, 104, 20);
     outline: none;
 
     @include OnPhone {
-      font-size: 15px;
+      font-size: 16px;
       padding: 0 2px;
+    }
+
+    @include OnLaptop {
+      font-size: 18px;
+      padding: 0 3px;
     }
 
     &--verify {
@@ -267,7 +308,11 @@ $disable-color: rgb(57, 104, 20);
       color: $base-color;
 
       @include OnPhone {
-        font-size: 15px;
+        font-size: 16px;
+      }
+
+      @include OnLaptop {
+        font-size: 18px;
       }
     }
 
@@ -319,6 +364,16 @@ $disable-color: rgb(57, 104, 20);
       width: 45px;
       height: 45px;
       font-size: 26px;
+
+      @include OnPhone {
+        width: 26px;
+        height: 26px;
+      }
+
+      @include OnLaptop {
+        width: 35px;
+        height: 35px;
+      }
     }
 
     &--centered {
@@ -334,6 +389,12 @@ $disable-color: rgb(57, 104, 20);
       @include OnPhone {
         width: 100%;
         height: 50px;
+      }
+
+      @include OnLaptop {
+        font-size: 18px;
+        width: 150px;
+        height: 56px;
       }
     }
 
@@ -356,13 +417,19 @@ $disable-color: rgb(57, 104, 20);
         width: 30px;
         height: 30px;
       }
+
+      @include OnLaptop {
+        transform: translate(-24%, -24%);
+        width: 36px;
+        height: 36px;
+      }
     }
 
     &:hover {
       background-color: $base-color;
       color: $background-color;
 
-      @include OnPhone {
+      @include OnPhoneAndLaptop {
         background-color: $background-color;
         color: $base-color;
       }
@@ -402,7 +469,6 @@ $disable-color: rgb(57, 104, 20);
     border: 5px solid $base-color;
     background-color: $background-color;
     color: $base-color;
-    font-size: 20px;
     cursor: pointer;
     text-decoration: none;
     margin: 5px 10px 10px;
@@ -410,7 +476,12 @@ $disable-color: rgb(57, 104, 20);
     @include OnPhone {
       width: 24px;
       height: 24px;
-      font-size: 15px;
+      border: 4px solid $base-color;
+    }
+
+    @include OnLaptop {
+      width: 28px;
+      height: 28px;
       border: 4px solid $base-color;
     }
 
@@ -442,6 +513,10 @@ $disable-color: rgb(57, 104, 20);
       height: 38.4px;
       justify-content: center;
       align-items: center;
+    }
+    
+    @include OnLaptop {
+      font-size: 18px;
     }
 
     &--enabled {
