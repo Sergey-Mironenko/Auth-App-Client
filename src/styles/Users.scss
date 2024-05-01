@@ -1,0 +1,17 @@
+.users {
+  &__content {
+    margin-bottom: 10px;
+
+    &--main {
+      border-bottom: 2px solid $base-color;
+    }
+  }
+  
+  &__text {
+    display: inline-block;
+
+    &:first-child {
+      width: 110px;
+    }
+  }
+}

@@ -3,19 +3,19 @@
     @content;
   }
 }
-
+  
 @mixin OnPhoneAndLaptop {
   @media (max-width: 1020px) {
     @content;
   }
 }
-  
+    
 @mixin OnLaptop {
   @media (min-width: 640px) and (max-width: 1020px) {
     @content;
   }
 }
-  
+    
 @mixin OnDesctop {
   @media (min-width: 1020px) {
     @content;
