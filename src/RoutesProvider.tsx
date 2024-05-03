@@ -87,7 +87,7 @@ export const RoutesProvider = () => {
 
         <Route
           path="delete+account"
-          element={<ChangePassword />}
+          element={<DeleteAccount />}
         />
       </Route>
       
