@@ -39,7 +39,7 @@ export const DeleteAccount = () => {
     
     try {
       if (logedUser) {
-        await deleteUser(logedUser.email);
+        await deleteUser(logedUser.email, deleteText);
         await logoutUser();
         
         removeLogedUser();    

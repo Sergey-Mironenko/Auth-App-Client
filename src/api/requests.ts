@@ -80,10 +80,10 @@ export const logoutUser = async () => {
   return await client.get('/logout');
 };
 
-export const deleteUser = async (email: string) => {
+export const deleteUser = async (email: string, text: string) => {
   await wait(1000);
 
-  const response = await client.post('/delete-account', { email });
+  const response = await client.post('/delete-account', { email, text });
 
   return response.data;
 }
