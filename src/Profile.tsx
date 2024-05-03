@@ -39,7 +39,7 @@ export const Profile = () => {
     setVisibleButtonsAmount(0);
 
     if (animationCondition) {
-      for (let i = 2; i <= message.length + 5; i++) {
+      for (let i = 2; i <= message.length + 6; i++) {
         timer.current = setTimeout(() => {
           setText(message.slice(0, i));
       
@@ -58,6 +58,9 @@ export const Profile = () => {
               break;
             case message.length + 5:
               setVisibleButtonsAmount(5);
+              break;
+            case message.length + 6:
+              setVisibleButtonsAmount(6);
               break;
             default:
           } 
@@ -169,6 +172,24 @@ export const Profile = () => {
             }}
           >
             Change password
+          </NavLink>
+
+          <NavLink
+            to={logedUser ? `/profile/${logedUser.id}/delete+account` : '/error'}
+            className={({ isActive }) => classNames(
+              'main__button',
+              'main__button--profile',
+              { 'main__button--enabled': visibleButtonsAmount >= 6 },
+              { 'main__button--focused': isActive},
+              { 'main__button--disabled': isLogingOut},
+            )} 
+            onClick={(event) => {
+              if (isLogingOut) {
+                event.preventDefault();
+              }
+            }}
+          >
+            Delete account
           </NavLink>
         </div>
       )}

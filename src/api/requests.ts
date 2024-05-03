@@ -52,13 +52,13 @@ export const getUsers = async () => {
   const response = await client.get('/users');
 
   return response.data;
-}
+};
 
 export const registerUser = async (name: string, email: string, password: string) => {
   const response = await client.post('/registration', { name, email, password });
 
   return response.data;
-}
+};
 
 export const activate = async (token: string) => {
   await wait(2000);
@@ -66,7 +66,7 @@ export const activate = async (token: string) => {
   const response = await client.get(`/activate/${token}`);
 
   return response.data;    
-}
+};
 
 export const loginUser = async (email: string, password: string) => {
   await wait(2000);
@@ -74,11 +74,19 @@ export const loginUser = async (email: string, password: string) => {
   const response = await client.post('/login', { email, password });
 
   return response.data;
-}
+};
 
 export const logoutUser = async () => {
   return await client.get('/logout');
 };
+
+export const deleteUser = async (email: string) => {
+  await wait(1000);
+
+  const response = await client.post('/delete-account', { email });
+
+  return response.data;
+}
 
 export const verifyUser = async (email: string) => {
   await wait(1000);

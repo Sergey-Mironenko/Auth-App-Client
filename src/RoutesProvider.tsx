@@ -88,7 +88,7 @@ export const RoutesProvider = () => {
       {refreshError && (
         <Route
           path="/login+error"
-          element={<Error errorMessage="Oops, login time out :(" />}
+          element={<Error errorMessage="Oops, login time is out :(" />}
         />
       )}
 
