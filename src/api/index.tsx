@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function createClient() {
   return axios.create({
-    baseURL: 'http://localhost:3005',
+    baseURL: 'https://auth-app-server-pm6d.onrender.com',
     withCredentials: true,
   });
 };
