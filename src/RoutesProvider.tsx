@@ -10,6 +10,7 @@ import { UserList } from './UserList';
 import { Rename } from './Rename';
 import { ChangeEmail } from './ChangeEmail';
 import { ChangePassword } from './ChangePassword';
+import { DeleteAccount } from './DeleteAccount';
 import { Error } from './Error';
 import { useAppSelector } from './app/hooks';
 
@@ -81,6 +82,11 @@ export const RoutesProvider = () => {
 
         <Route
           path="change+password"
+          element={<ChangePassword />}
+        />
+
+        <Route
+          path="delete+account"
           element={<ChangePassword />}
         />
       </Route>
