@@ -1,5 +1,4 @@
 .main {
-  overflow-x: hidden;
   margin: 25px 0;
   padding: 0 30px;
   display: flex;
@@ -101,6 +100,8 @@
     }
   
     &--disabled {
+      background-color: $background-color;
+      color: $disable-color;
       pointer-events: none;
     }
   
