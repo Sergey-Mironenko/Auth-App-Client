@@ -91,7 +91,7 @@ export const Profile = () => {
     if (isLogingOut) {
       setLoadingText('...');
     }
-  }, [isLogingOut]);
+  }, [isLogingOut, setLoadingText]);
     
   return (
     <>
