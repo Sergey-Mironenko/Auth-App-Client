@@ -6,6 +6,7 @@ import { logoutUser } from './api/requests';
 import { useAppSelector } from './app/hooks';
 import { actions as logedUserActions } from './features/logedUser';
 import { Timer } from './types/Timer';
+import { useLoading } from './utils/hooks';
 
 export const Profile = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,8 @@ export const Profile = () => {
   const navigate = useNavigate();
   const animationCondition = logedUser ? (pathname === `/profile/${logedUser.id}`) : false;
   let timer = useRef<Timer | null>(null);
+  let interval = useRef<Timer | null>(null);
+  const [loadingText, setLoadingText] = useLoading(interval, '');
   
   const onLogOut = async () => {
     setIsLogingOut(true);
@@ -32,6 +35,7 @@ export const Profile = () => {
       localStorage.removeItem('accessToken');
       removeLogedUser();
       setIsLogingOut(false);
+      clearInterval(interval.current as Timer);
     }
   };
   
@@ -82,6 +86,12 @@ export const Profile = () => {
   
     return () => clearTimeout(timer.current as Timer);
   }, [isRenamed, message, animationCondition, setText]);
+
+  useEffect(() => {
+    if (isLogingOut) {
+      setLoadingText('...');
+    }
+  }, [isLogingOut]);
     
   return (
     <>
@@ -99,7 +109,7 @@ export const Profile = () => {
             disabled={isLogingOut}
             onClick={onLogOut}
           >
-            Log out
+            {isLogingOut ? loadingText : 'Log out'}
           </button>
 
           <NavLink
@@ -117,7 +127,7 @@ export const Profile = () => {
               }
             }}
           >
-            Users
+            {isLogingOut ? loadingText : 'Users'}
           </NavLink>
 
           <NavLink
@@ -135,7 +145,7 @@ export const Profile = () => {
               }
             }}
           >
-            Change name
+            {isLogingOut ? loadingText : 'Change name'}
           </NavLink>
 
           <NavLink
@@ -153,7 +163,7 @@ export const Profile = () => {
               }
             }}
           >
-            Change email
+            {isLogingOut ? loadingText : 'Change email'}
           </NavLink>
 
           <NavLink
@@ -171,7 +181,7 @@ export const Profile = () => {
               }
             }}
           >
-            Change password
+            {isLogingOut ? loadingText : 'Change password'}
           </NavLink>
 
           <NavLink
@@ -189,7 +199,7 @@ export const Profile = () => {
               }
             }}
           >
-            Delete account
+            {isLogingOut ? loadingText : 'Delete account'}
           </NavLink>
         </div>
       )}
