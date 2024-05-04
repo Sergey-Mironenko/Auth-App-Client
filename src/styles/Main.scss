@@ -100,8 +100,6 @@
     }
   
     &--disabled {
-      background-color: $background-color;
-      color: $disable-color;
       pointer-events: none;
     }
   
