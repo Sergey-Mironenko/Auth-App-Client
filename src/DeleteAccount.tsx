@@ -43,9 +43,8 @@ export const DeleteAccount = () => {
         await deleteUser(logedUser.email, deleteText);
         await logoutUser();
         
-        removeLogedUser();
-
         navigate('/successfully+deleted');
+        removeLogedUser(); 
       }
     } catch (e: any) {
       if (e.response && e.response.status) {
