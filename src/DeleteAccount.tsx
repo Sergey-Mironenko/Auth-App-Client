@@ -24,6 +24,7 @@ export const DeleteAccount = () => {
   const [isSectionVisible, setIsSectionVisible] = useState(false);
   let timer1 = useRef<Timer | null>(null);
   let timer2 = useRef<Timer | null>(null);
+  let timer3 = useRef<Timer | null>(null);
   let interval = useRef<Timer | null>(null);
   const [message, setMessage] = useLoading(interval, '');
  
@@ -42,8 +43,11 @@ export const DeleteAccount = () => {
       if (logedUser) {
         await deleteUser(logedUser.email, deleteText);
         
-        navigate('/successfully+deleted');
-        removeLogedUser(); 
+        handleMessage('Successfully deleted');
+
+        timer3.current = setTimeout(() => {
+          removeLogedUser(); 
+        }, 2500);       
       }
     } catch (e: any) {
       if (e.response && e.response.status) {
@@ -63,6 +67,7 @@ export const DeleteAccount = () => {
       setIsLoading(false);
       clearInterval(interval.current as Timer);
       clearTimeout(timer2.current as Timer);
+      clearTimeout(timer3.current as Timer);
     }
   };
   
