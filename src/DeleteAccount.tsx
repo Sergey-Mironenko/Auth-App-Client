@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import { useLoading } from './utils/hooks';
@@ -11,7 +11,6 @@ import { Timer } from './types/Timer';
      
 export const DeleteAccount = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { logedUser } = useAppSelector(state => state.logedUser);
   const removeLogedUser = useCallback(() => dispatch(logedUserActions.removeLogedUser()), [dispatch]);
   const handleRefreshFail = useCallback(() => dispatch(refreshErrorActions.handleRefreshFail()), [dispatch]);
@@ -24,7 +23,6 @@ export const DeleteAccount = () => {
   const [isSectionVisible, setIsSectionVisible] = useState(false);
   let timer1 = useRef<Timer | null>(null);
   let timer2 = useRef<Timer | null>(null);
-  let timer3 = useRef<Timer | null>(null);
   let interval = useRef<Timer | null>(null);
   const [message, setMessage] = useLoading(interval, '');
  
@@ -44,8 +42,9 @@ export const DeleteAccount = () => {
         await deleteUser(logedUser.email, deleteText);
         
         handleMessage('Successfully deleted');
+        setDeleteText('');
 
-        timer3.current = setTimeout(() => {
+        setTimeout(() => {
           removeLogedUser(); 
         }, 2500);       
       }
@@ -67,7 +66,6 @@ export const DeleteAccount = () => {
       setIsLoading(false);
       clearInterval(interval.current as Timer);
       clearTimeout(timer2.current as Timer);
-      clearTimeout(timer3.current as Timer);
     }
   };
   
