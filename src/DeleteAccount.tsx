@@ -20,6 +20,7 @@ export const DeleteAccount = () => {
   const [isInputVisible, setIsInputVisible] = useState(false);
   const [isButtonVisible, setIsButtonVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
   let timer1 = useRef<Timer | null>(null);
   let timer2 = useRef<Timer | null>(null);
@@ -41,6 +42,7 @@ export const DeleteAccount = () => {
       if (logedUser) {
         await deleteUser(logedUser.email, deleteText);
         
+        setIsDeleted(true);
         handleMessage('Successfully deleted');
         setDeleteText('');
 
@@ -115,7 +117,7 @@ export const DeleteAccount = () => {
                 'section__button',
                 'section__button--back',
                 { 'section__button--enabled': isSectionVisible},
-                { 'section__button--disabled': isLoading},
+                { 'section__button--disabled': isLoading || isDeleted},
               )}
               onClick={(event) => {
                 if (isLoading) {
