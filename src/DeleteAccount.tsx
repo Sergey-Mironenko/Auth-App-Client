@@ -4,13 +4,14 @@ import { useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import { useLoading } from './utils/hooks';
 import { useAppSelector } from './app/hooks';
-import { deleteUser, logoutUser } from './api/requests';
+import { deleteUser } from './api/requests';
 import { actions as logedUserActions } from './features/logedUser';
 import { actions as refreshErrorActions } from './features/refreshError';
 import { Timer } from './types/Timer';
      
 export const DeleteAccount = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { logedUser } = useAppSelector(state => state.logedUser);
   const removeLogedUser = useCallback(() => dispatch(logedUserActions.removeLogedUser()), [dispatch]);
   const handleRefreshFail = useCallback(() => dispatch(refreshErrorActions.handleRefreshFail()), [dispatch]);
@@ -24,7 +25,6 @@ export const DeleteAccount = () => {
   let timer1 = useRef<Timer | null>(null);
   let timer2 = useRef<Timer | null>(null);
   let interval = useRef<Timer | null>(null);
-  const navigate = useNavigate();
   const [message, setMessage] = useLoading(interval, '');
  
   const handleMessage = (errorMessage: string) => {
@@ -41,7 +41,6 @@ export const DeleteAccount = () => {
     try {
       if (logedUser) {
         await deleteUser(logedUser.email, deleteText);
-        await logoutUser();
         
         navigate('/successfully+deleted');
         removeLogedUser(); 
