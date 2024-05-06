@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import { useLoading } from './utils/hooks';
@@ -24,6 +24,7 @@ export const DeleteAccount = () => {
   let timer1 = useRef<Timer | null>(null);
   let timer2 = useRef<Timer | null>(null);
   let interval = useRef<Timer | null>(null);
+  const navigate = useNavigate();
   const [message, setMessage] = useLoading(interval, '');
  
   const handleMessage = (errorMessage: string) => {
@@ -42,7 +43,9 @@ export const DeleteAccount = () => {
         await deleteUser(logedUser.email, deleteText);
         await logoutUser();
         
-        removeLogedUser();    
+        removeLogedUser();
+
+        navigate('/successfully+deleted');
       }
     } catch (e: any) {
       if (e.response && e.response.status) {

@@ -104,6 +104,11 @@ export const RoutesProvider = () => {
       />
 
       <Route
+        path="/successfully+deleted"
+        element={<Error errorMessage="Successfully deleted :)" />}
+      />
+
+      <Route
         path="*"
         element={<Navigate to="/error" replace={true} />}
       />
