@@ -114,7 +114,7 @@ export const Registration = () => {
               { 'section__input--disabled': isLoading},
             )}
             type="text"
-            placeholder='Enter name.'
+            placeholder='Enter name'
             value={name}
             disabled={isLoading}
             onChange={(event) => {
@@ -132,7 +132,7 @@ export const Registration = () => {
               { 'section__input--disabled': isLoading},
             )}
             type="email"
-            placeholder='Enter e-mail.'
+            placeholder='Enter e-mail'
             value={email}
             disabled={isLoading}
             onChange={(event) => {
@@ -150,7 +150,7 @@ export const Registration = () => {
               { 'section__input--disabled': isLoading},
             )}
             type="password"
-            placeholder='Enter password.'
+            placeholder='Enter password'
             value={password}
             disabled={isLoading}
             onChange={(event) => {

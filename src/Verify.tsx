@@ -158,7 +158,7 @@ export const Verify = () => {
                 { 'section__input--disabled': isLoading || currentUser !== null},
               )}
               type="email"
-              placeholder='Enter e-mail.'
+              placeholder='Enter e-mail'
               value={email}
               disabled={isLoading || currentUser !== null}
               onChange={(event) => {
@@ -177,7 +177,7 @@ export const Verify = () => {
                 { 'section__input--disabled': isLoading},
               )}
               type="text"
-              placeholder='Enter token from email.'
+              placeholder='Enter token from email'
               value={verifyToken}
               disabled={isLoading}
               onChange={(event) => {

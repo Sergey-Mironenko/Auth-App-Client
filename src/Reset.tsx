@@ -184,7 +184,7 @@ export const Reset = () => {
                 { 'section__input--disabled': isLoading},
               )}
               type="password"
-              placeholder='Enter new password.'
+              placeholder='Enter new password'
               value={firstPassword}
               disabled={isLoading}
               onChange={(event) => {
@@ -202,7 +202,7 @@ export const Reset = () => {
                 { 'section__input--disabled': isLoading},
               )}
               type="password"
-              placeholder='Repeat new password.'
+              placeholder='Repeat new password'
               value={secondPassword}
               disabled={isLoading}
               onChange={(event) => {

@@ -142,7 +142,7 @@ export const DeleteAccount = () => {
               { 'section__input--disabled': isLoading},
             )}
             type="text"
-            placeholder='Enter text here.'
+            placeholder='Enter text here'
             value={deleteText}
             disabled={isLoading}
             onChange={(event) => {
