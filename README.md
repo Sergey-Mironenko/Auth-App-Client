@@ -32,6 +32,7 @@ All data comparition and checking is implemented on a server side to prevent dat
 - App is responsive and works on all screen sizes.
 
 https://github.com/Sergey-Mironenko/Authentication-app/assets/106872008/6db9e12b-cce5-40cc-b68c-9927aaaa463c
+
 https://github.com/Sergey-Mironenko/Auth-App-Client/assets/106872008/dbc8dda2-62e3-452e-bedd-3cf6b21d218d
 
 ## Registration page
