@@ -1,4 +1,4 @@
-# Authentication App
+# Auth App Client
 A single-page application that alows user to register, login or change the password. Loged user can see the list of all activated users, change his name password or email. Implements the look and behaviour of old computers.
 
 # Table of contents
@@ -32,6 +32,7 @@ All data comparition and checking is implemented on a server side to prevent dat
 - App is responsive and works on all screen sizes.
 
 https://github.com/Sergey-Mironenko/Authentication-app/assets/106872008/6db9e12b-cce5-40cc-b68c-9927aaaa463c
+https://github.com/Sergey-Mironenko/Auth-App-Client/assets/106872008/dbc8dda2-62e3-452e-bedd-3cf6b21d218d
 
 ## Registration page
 - Asks to enter name, email and password.
@@ -113,7 +114,7 @@ https://github.com/Sergey-Mironenko/Authentication-app/assets/106872008/bb888ac2
 - Makes request to server.
 - Shows successfull message and logs user out in fiew seconds if everything is ok, or shows error message in case of error in response.
 
-https://github.com/Sergey-Mironenko/Authentication-app/assets/106872008/bb888ac2-cfe1-4a88-bc9e-37d08414f3a1
+https://github.com/Sergey-Mironenko/Auth-App-Client/assets/106872008/e2f38b71-03a8-4ce3-8308-15318c5b965e
 
 # Reflections
 Project goals included using technologies learned up until this point, familiarizing myself with documentation for new features and creating an application that replicates the design and functionality of programs from the 60s.
