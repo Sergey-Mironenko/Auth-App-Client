@@ -120,7 +120,7 @@ export const DeleteAccount = () => {
                 { 'section__button--disabled': isLoading || isDeleted},
               )}
               onClick={(event) => {
-                if (isLoading) {
+                if (isLoading || isDeleted) {
                   event.preventDefault();
                 }
               }}
@@ -159,9 +159,9 @@ export const DeleteAccount = () => {
               className={classNames(
                 'section__button',
                 { 'section__button--enabled': isButtonVisible},
-                { 'section__button--disabled': isLoading},
+                { 'section__button--disabled': isLoading || isDeleted},
               )}
-              disabled={isLoading}
+              disabled={isLoading || isDeleted}
               onClick={onRename}
             >
               Submit
