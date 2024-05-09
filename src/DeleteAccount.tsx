@@ -139,12 +139,12 @@ export const DeleteAccount = () => {
             className={classNames(
               'section__input',
               { 'section__input--enabled': isInputVisible},
-              { 'section__input--disabled': isLoading},
+              { 'section__input--disabled': isLoading || isDeleted},
             )}
             type="text"
             placeholder='Enter text here'
             value={deleteText}
-            disabled={isLoading}
+            disabled={isLoading || isDeleted}
             onChange={(event) => {
               if (deleteText.length <= 20 && event.target.value.length <= 20) {
                 setDeleteText(event.target.value);
